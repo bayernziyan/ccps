@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.AlphaflowFormMapper" >
+	<parameterMap type="Map" id="gridrow">
+		<parameter property="i_formDataId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_itemId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+		<parameter property="i_col_1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_3" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_4" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_5" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_6" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_7" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_8" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_9" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_10" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_11" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_12" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_13" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_14" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_15" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_16" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_17" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_18" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_19" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="i_col_20" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>		
+	</parameterMap>
+
+    <select id="setNormalItemValue"  statementType="CALLABLE"  >  
+	    <![CDATA[  
+	       {call newsoft.SP_DEVPACK_SAVE_VALUE_BY_FIELD(#{wfId},#{fieldId},#{value},#{createUser})}
+	    ]]>  
+    </select> 
+    
+    <select id="setNormalItemValueOriginal" statementType="CALLABLE" >
+    	<![CDATA[
+    		{call newsoft.sp_eccm_ufid(#{wfId},#{formDataId},#{itemId},#{value},#{taskId},#{userId},0,#{userName},#{multiAssigneeStr}) }
+    	]]>    
+    </select>   
+     
+	<select id="getFormItemTypeList" resultType="org.ccps.alphaflow.api.pojo.AlphaflowFormItem" parameterType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select id,type_id,item_name,def_field_id,key_value_flag,key_value_list,parent_id from newsoft.ecl_request_form_item where form_id=#{formId,jdbcType=INTEGER} and def_field_id is not null
+	    ]]>  
+    </select>
+    
+    <select id="getFormGridItemTypeList" resultType="org.ccps.alphaflow.api.pojo.AlphaflowFormItem"  >  
+	    <![CDATA[  
+	       select id,type_id,item_name,def_field_id,key_value_flag,key_value_list,parent_id,sub_type_id from newsoft.ecl_request_form_item where form_id=#{formId,jdbcType=INTEGER} and parent_id=#{parentId,jdbcType=INTEGER} order by order_id
+	    ]]>  
+    </select>
+    
+	 <select id="getAlphaflowFormIdByWfId" resultType="java.lang.Integer"  >  
+	    <![CDATA[  
+	       select form_Id from newsoft.ecl_request_sheet where  request_id=#{wfId,jdbcType=INTEGER}
+	    ]]>  
+    </select>
+	
+	<select id="getAlphaflowItemIdByItemDef" resultType="java.lang.Integer"  >  
+	    <![CDATA[  
+	       select id from newsoft.ecl_request_form_item where  def_field_id=#{itemDef}
+	    ]]>  
+    </select>
+	
+	<select id="getAlphaflowItemBeanByItemDef" resultType="org.ccps.alphaflow.api.pojo.AlphaflowFormItem">
+		<![CDATA[  
+	       select id,item_name,action_group_id,def_field_id from newsoft.ecl_request_form_item where  def_field_id=#{itemDef} and form_id =#{formId}
+	    ]]>
+	</select>
+	
+	<select id="getAlphaflowItemData" resultType="java.lang.String" >
+		<![CDATA[  
+	      select value from newsoft.ecl_request_form_item_data where form_data_id=#{formDataId} and item_id=#{itemId}
+	    ]]>
+	</select>
+	
+	<select id="getAlphaflowGridRowData" resultType="java.util.HashMap"  parameterType="org.ccps.alphaflow.api.pojo.SearchListExample" >
+    	select     	
+	    	<if test="_parameter != null" >
+	    		${selectColumns}
+	  		 </if>
+ 
+    	from newsoft.ecl_request_form_grid_data 
+		<where >	      
+	      <foreach collection="oredCriteria" item="criteria" separator="or" >
+	        <if test="criteria.valid" > 
+	           and 
+	          <trim prefix="(" suffix=")" prefixOverrides="and" >
+	            <foreach collection="criteria.criteria" item="criterion" >
+	              <choose >
+	                <when test="criterion.noValue" >
+	                  and ${criterion.condition}
+	                </when>
+	                <when test="criterion.singleValue" >
+	                  and ${criterion.condition} #{criterion.value}
+	                </when>
+	                <when test="criterion.betweenValue" >
+	                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+	                </when>
+	                <when test="criterion.listValue" >
+	                  and ${criterion.condition}
+	                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+	                    #{listItem}
+	                  </foreach>
+	                </when>
+	              </choose>
+	            </foreach>
+	          </trim>
+	        </if>
+	      </foreach>
+    	</where>
+    </select>
+	
+    <insert id="addItemValue" >
+   		<![CDATA[  
+	   	    insert into newsoft.ecl_request_form_item_data (id, form_data_id, item_id, value)
+              values (newsoft.ecl_req_form_item_data_id_seq.nextval, #{formDataId}, #{itemId}, #{value})
+	    ]]>  
+    </insert>           
+               
+  	<delete id="deleteItemValue" >
+	    <![CDATA[  
+	       delete newsoft.ecl_request_form_item_data where form_data_id = #{formDataId} and item_id = #{itemId}
+	    ]]>  
+ 	</delete>
+  
+  	<delete id="deleteGridValue" >
+	    <![CDATA[  
+	   	   delete from  newsoft.ecl_request_form_grid_data where  form_data_id = #{formDataId} and item_id = #{itemId}
+	    ]]>  
+ 	</delete>
+  	
+  	<insert id="setGridValue" parameterMap="gridrow" >
+   		<![CDATA[  
+	   	   insert into newsoft.ecl_request_form_grid_data (id,form_data_id,item_id, col_1_value,
+   		   col_2_value, col_3_value, col_4_value, col_5_value, col_6_value, col_7_value, col_8_value,col_9_value, col_10_value, 
+     	   col_11_value, col_12_value, col_13_value, col_14_value, col_15_value, col_16_value, col_17_value, col_18_value,col_19_value, col_20_value) 
+    	   values (newsoft.ecl_request_form_grid_data_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+	    ]]>  
+    </insert>
+  	
+</mapper>

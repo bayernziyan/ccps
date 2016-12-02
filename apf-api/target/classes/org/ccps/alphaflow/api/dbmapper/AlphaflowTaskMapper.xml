@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.AlphaflowTaskMapper" >
+	
+	<parameterMap id="wttaWorkflowParameter" type="Map">
+        <parameter property="i_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_wf_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_form_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_form_data_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_sender_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        
+        <parameter property="i_user_id1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        
+       <!--  <parameter property="i_task_complete_status" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_assigned_status" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_workflow_complete_status" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_task_submit_application" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_task_finish_workflow" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" /> -->
+        <!-- <parameter property="i_task_note" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <parameter property="i_def_Y" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/> -->
+        <parameter property="i_user_id2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <!--<parameter property="i_def_0" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>-->
+        
+        <!-- 16 -->
+        <parameter property="o_post_cmd" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_post_param" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_next_sender_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_next_receiver_list" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_next_task_type_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_post_cmd_data_source" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <!--  -->
+         <parameter property="o_is_flow_down" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+       <parameter property="o_mq_send" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_mq_nexttaskname" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_deal_to_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_next_task_list" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/> 
+    </parameterMap>
+
+	<parameterMap id="wfstWorkflowParameter" type="Map">
+		 <parameter property="o_next_task_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/> 
+		 <parameter property="i_wfId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+		 <parameter property="i_actionGroupId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+		 <parameter property="i_assigners" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		 <parameter property="i_itemId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	</parameterMap>
+
+	<sql id="GTask_Example_Where_Clause" >   
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          and 
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>    
+  </sql>
+
+
+    <select id="getWfIdByTaskId" resultType="java.lang.Integer" parameterType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select request_id  from newsoft.ecl_tasks where id = #{taskId}
+	    ]]>  
+    </select>  
+  
+   <select id="getAlphaflowInstanceTaskById" resultType="org.ccps.alphaflow.api.pojo.AlphaflowTaskBean">
+  		<![CDATA[
+  			 select max(decode(c_type,13,c_desc,'')) approve_code,max(decode(c_type,9,c_desc,'')) approve_comment,max(t.id) task_id,max(t.task_name) task_name, max(t.task_desc) task_desc, max(t.type_id) type_id,max(t.status_id) status_id,
+                max(t.task_level) task_level,max(t.order_id) order_id,max(t.priority_id) priority_id,max(t.assigner) assigner,max(t.action_group_id) action_group_id,  
+               max(t.assignee_type) assignee_type, max(t.assignee) assignee,max(t.assignee_name) assignee_name,max(t.request_id) wfId,max(t.prior_task_id) prior_task_id, max(t.control_id) control_id from newsoft.ecl_task_component c left join  newsoft.ecl_tasks t on c.task_id = t.id
+                where t.id is not null and t.id= #{taskId}  group by task_id 	
+  		]]>  	
+  	</select> 
+    
+    <select id="getCurrentTaskIdsByWfId" resultType="java.lang.Integer"  parameterType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select id  from newsoft.ecl_tasks where request_id = #{wfId} and status_id in (3,11) and folder_id=0 order by order_id 
+	    ]]>  
+    </select>
+    
+    <select id="getAlphaflowGTasksSingle" resultType="org.ccps.alphaflow.api.pojo.AlphaflowTaskBean">
+    	
+    	select * from (
+    	select 0 as work_mode,e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,  
+		e.start_date,e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name,e.task_deal_limit_flag,e.first_open_user,  
+		e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id,e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,e.time_limit_minute,  
+		e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id,r.init_id,r.str_att_1,t.group_id,t.sub_group_id, 
+		(select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,  
+		(select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name  
+		from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t  
+		where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y'   
+		and e.request_id = r.request_id   
+		and r.template_id = t.request_id  
+		and r.container_type = 4  
+		and e.assignee_type = 0  
+		and e.assignee = #{userReqId}  
+		and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+		and e.ft_flag &lt;&gt; 'Y'  
+		<if test="example != null" >
+			<include refid="GTask_Example_Where_Clause" />
+		</if> 
+		union  
+		select 1 as work_mode,e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,  
+		e.start_date,e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name,e.task_deal_limit_flag, e.first_open_user,  
+		e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id,e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,e.time_limit_minute,  
+		e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id,r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+		(select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,  
+		(select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name  
+		from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t, newsoft.ecl_delegate d  
+		where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y'  
+		and e.request_id = r.request_id   
+		and r.template_id = t.request_id  
+		and r.container_type = 4  
+		and e.assignee_type = 0  
+		and e.assignee = d.fws_id  
+		and d.tws_id = #{userReqId}  
+		and ( d.request_id = -1 or d.request_id = r.template_id )  
+		and d.status_id = 1  
+		and sysdate between d.start_time and nvl(d.end_time,to_date('2999/01/01','yyyy/mm/dd'))  
+		and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+		and e.ft_flag &lt;&gt; 'Y'  
+		<if test="example != null" >
+			<include refid="GTask_Example_Where_Clause" />
+		</if> 
+		union  
+		select 0 as work_mode,e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,  
+		e.start_date,e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name, e.task_deal_limit_flag, e.first_open_user, 
+		e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id,e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,e.time_limit_minute,  
+		e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id,r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+		(select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,  
+		(select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name  
+		 from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t,newsoft.ecl_user_position_level p  
+		 where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y' and e.request_id = r.request_id   
+		 and r.template_id = t.request_id   
+		 and r.container_type = 4  
+		 and e.assignee_type > 0  
+		 and e.assignee_type = p.position_level_id   
+		 and e.assignee = p.request_id  
+		 and p.del_id is null  
+		 and p.user_id =  #{userSkey}  
+		 and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+		 and e.ft_flag &lt;&gt; 'Y'  
+		 <if test="example != null" >
+			<include refid="GTask_Example_Where_Clause" />
+		 </if>  
+		 union  
+		select 1 as work_mode,e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,  
+		 e.start_date,e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name, e.task_deal_limit_flag, e.first_open_user,  
+		 e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id,e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,e.time_limit_minute,  
+		 e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id,r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+		 (select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,  
+		 (select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name  
+		from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t,newsoft.ecl_user_position_level p,newsoft.ecl_delegate d  
+		where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y' and e.request_id = r.request_id   
+		and r.template_id = t.request_id   
+		and r.container_type = 4   
+		and e.assignee_type > 0  
+		and e.assignee_type = p.position_level_id   
+		and e.assignee = p.request_id  
+		and p.del_id = d.del_grp_id  
+		and d.status_id = 1  
+		and sysdate between d.start_time and nvl(d.end_time,to_date('2999/01/01','yyyy/mm/dd') )  
+		and p.user_id =  #{userSkey}  
+		and ( d.request_id = -1 or d.request_id = r.template_id )  
+		and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+		         and e.ft_flag &lt;&gt; 'Y'  
+		<if test="example != null" >
+			<include refid="GTask_Example_Where_Clause" />
+		</if>  
+		)
+		<if test="example.orderByClause != null" >
+     		 order by ${example.orderByClause}
+   	  	</if> 
+		  
+    </select>    
+    
+    <select id="getAlphaflowGTasksMulti" resultType="org.ccps.alphaflow.api.pojo.AlphaflowTaskBean" >
+				select * from (
+				select e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,e.start_date, 
+                     e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name,e.task_deal_limit_flag, e.first_open_user,
+                     e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id, 
+                     e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,  
+                     e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id, 
+                     r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+                     (select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,   
+                     (select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name   
+                     from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t   
+                     where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y'  
+                     and e.request_id = r.request_id   
+                     and   r.template_id = t.request_id  and r.container_type=4   
+                     and e.assignee_type = 0 
+                     and e.assignee in (${workspaceIds}) 
+                     and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+         			 <if test="example != null" >
+				     	 <include refid="GTask_Example_Where_Clause" />
+				   	 </if>
+                     union 
+                     select e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,e.start_date, 
+                     e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name,e.task_deal_limit_flag, e.first_open_user,
+                     e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id, 
+                     e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,  
+                     e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id, 
+                     r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+                     (select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,   
+                     (select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name   
+                     from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t, newsoft.ecl_delegate d   
+                     where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y'  
+                     and e.request_id = r.request_id  
+                     and   r.template_id = t.request_id  and r.container_type=4  
+                     and e.assignee_type = 0 
+                     and e.assignee = d.fws_id 
+                     and d.tws_id in (${workspaceIds}) 
+                     and ( d.request_id = -1 or d.request_id = r.template_id )  
+                     and d.status_id = 1  
+                     and sysdate between d.start_time and nvl(d.end_time,to_date('2999/01/01','yyyy/mm/dd'))  
+                     and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+                     <if test="example != null" >
+				     	 <include refid="GTask_Example_Where_Clause" />
+				   	 </if>  
+                     union 
+                     select e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,e.start_date, 
+                     e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name,e.task_deal_limit_flag, e.first_open_user,
+                     e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id, 
+                     e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,  
+                     e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id, 
+                     r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+                     (select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,   
+                     (select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name   
+                     from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t,newsoft.ecl_user_position_level p  
+                     where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y'  
+                     and e.request_id = r.request_id   
+                     and   r.template_id = t.request_id  and r.container_type=4  
+                     and e.assignee_type > 0  
+                     and e.assignee_type = p.position_level_id   
+                     and e.assignee = p.request_id  
+                     and p.del_id is null  
+                     and p.user_id in (${userSkeys})  
+                     and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+                     <if test="example != null" >
+				     	 <include refid="GTask_Example_Where_Clause" />
+				   	 </if> 
+                     union 
+                     select e.id task_id,e.task_name, e.task_desc, e.type_id,e.priority_id,e.folder_id,e.status_id,e.start_date, 
+                     e.due_date,e.assigner, e.create_user as assigner_name,e.assignee_type,e.assignee,e.assignee_name,e.task_deal_limit_flag, e.first_open_user,
+                     e.assigner_notes, e.assignee_notes, e.request_id wfId,e.task_level,e.prior_task_id,e.parent_task_id, 
+                     e.control_id, r.create_date,r.create_user_id,e.last_mod_date,e.last_mod_user,e.assign_date,  
+                     e.flwup_flag,e.flwup_uid,e.source_id, r.request_desc wfName,r.container_type,r.template_id,r.parent_id, 
+                     r.init_id,r.str_att_1,t.group_id,t.sub_group_id,  
+                     (select g1.name from  newsoft.ecl_groups g1 where t.group_id = g1.id) as group_name,   
+                     (select g2.name from newsoft.ecl_groups g2 where t.sub_group_id = g2.id) as sub_group_name   
+                     from newsoft.ecl_tasks e, newsoft.ecl_request_sheet r,newsoft.ecl_request_sheet t,newsoft.ecl_user_position_level p,newsoft.ecl_delegate d  
+                     where nvl((select tr.into_comp from newsoft.ecl_request_sheet tr where tr.request_id=r.template_id),'Y')='Y'  
+                     and e.request_id = r.request_id  
+                     and   r.template_id = t.request_id  and r.container_type=4  
+                     and e.assignee_type > 0      
+                     and e.assignee_type = p.position_level_id   
+                     and e.assignee = p.request_id  
+                     and p.del_id = d.del_grp_id  
+                     and d.status_id = 1  
+                     and sysdate between d.start_time and nvl(d.end_time,to_date('2999/01/01','yyyy/mm/dd') )  
+                     and p.user_id in (${userSkeys})   
+                     and ( d.request_id = -1 or d.request_id = r.template_id )  
+                     and ( e.status_id = #{status_1} or e.status_id = #{status_2} or e.status_id = #{status_3} )  
+                     <if test="example != null" >
+				     	 <include refid="GTask_Example_Where_Clause" />
+				   	 </if>
+			) 
+			<if test="example.orderByClause != null" >
+     		 	order by ${example.orderByClause}
+   	  		</if> 
+	</select>
+    
+	<update id="updateTaskStatus" >
+		 <![CDATA[  
+	       update newsoft.ecl_tasks set status_id = #{statusId} where id = #{taskId}
+	    ]]>  
+	</update>
+    <update id="updateTaskAssignee">
+    	<![CDATA[
+    		update newsoft.ecl_tasks set assignee = #{assignee} , assignee_type = #{assigneeType} , assignee_name = #{assigneeName} where id = #{taskId} 
+    	]]>
+    </update>
+    
+    <select id="alphaflowTaskChangeTaskStatus"  statementType="CALLABLE">
+    	<![CDATA[ 
+    		{call newsoft.sp_eccm_air_change_task_status(#{taskId},#{statusId})}
+    	]]>	
+	</select>
+	
+	<select id="alphaflowNewAssigneeTaskDup" statementType="CALLABLE" >
+		<![CDATA[
+			{call newsoft.sp_eccm_copy_new_task_ass1(#{assignee},#{taskId},#{createUser},#{new_taskId,mode=OUT,jdbcType=INTEGER})}
+		]]>		
+	</select>
+	
+	
+	<select id="alphaflowTaskChangeAssignee" statementType="CALLABLE" >
+		<![CDATA[{call newsoft.sp_eccm_air_change_assignee(#{wfId,mode=IN,jdbcType=INTEGER},#{taskId,mode=IN,jdbcType=INTEGER},#{userReqId,mode=IN,jdbcType=INTEGER},#{userFullName,mode=IN,jdbcType=VARCHAR})}]]>	
+	</select>
+	
+	<!-- 20参数 -->     <!-- ,?,?,?,?,? -->
+	<select id="alphaflowTaskForward" parameterMap="wttaWorkflowParameter" statementType="CALLABLE">
+		<![CDATA[
+			{ call newsoft.sp_eccm_wtta(?,?,?,?,?,?,6,1,3,2,11,'','Y',?,0,?,?,?,?,?,?,?,?,?,?,?) } 
+		]]>	
+	</select>
+  	
+  	
+  	<select id="alphaflowCheckDealAfterWTTA"  statementType="CALLABLE">
+		<![CDATA[
+			{ call newsoft.sp_check_dealtoid_after_wtta(#{wfId},#{formTaskId},#{toTaskId},#{userId}) } 
+		]]>	
+	</select>
+  	
+  	
+  	
+  	<select id="alphaflowSetTask" parameterMap="wfstWorkflowParameter" statementType="CALLABLE" >
+  		<![CDATA[
+  			{call newsoft.sp_eccm_wfst(?,?,?,?,0,?)}
+  		]]>
+  	</select>
+  	
+  	
+  
+  	
+</mapper>

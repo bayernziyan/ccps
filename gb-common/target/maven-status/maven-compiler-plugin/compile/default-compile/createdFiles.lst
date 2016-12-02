@@ -1,0 +1,16 @@
+org\ccps\common\roca\core\ResourceSupport.class
+org\ccps\common\constant\EmptyObjectConstant.class
+org\ccps\common\constant\CRC32.class
+org\ccps\common\roca\core\Link.class
+org\ccps\common\ObjectMappingCustomer.class
+org\ccps\common\roca\core\Resource.class
+org\ccps\common\constant\MD5N.class
+org\ccps\common\ObjectMappingCustomer$1.class
+org\ccps\common\util\StringUtil.class
+org\ccps\common\roca\core\Relation.class
+org\ccps\common\roca\core\AbstractResourceAssembler.class
+org\ccps\common\navigation\FallbackNavigationConfiguration$1.class
+org\ccps\common\roca\core\RequestParameter.class
+org\ccps\common\roca\core\PathFragment.class
+org\ccps\common\roca\core\LinkBuilder.class
+org\ccps\common\navigation\FallbackNavigationConfiguration.class

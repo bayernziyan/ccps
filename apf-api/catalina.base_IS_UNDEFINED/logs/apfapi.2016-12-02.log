@@ -1,0 +1,1034 @@
+2016-12-02 09:27:31.679 [http-nio-8084-exec-2] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 09:27:31.681 [http-nio-8084-exec-2] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 09:42:59.296 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 6872 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 09:43:06.367 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.293 seconds (JVM running for 8.017)
+ 2016-12-02 09:44:20.858 [http-nio-8084-exec-7] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 09:44:20.859 [http-nio-8084-exec-7] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 10:14:03.173 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 3488 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 10:14:10.150 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.19 seconds (JVM running for 7.954)
+ 2016-12-02 10:19:14.596 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 6276 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 10:19:21.509 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.133 seconds (JVM running for 7.875)
+ 2016-12-02 10:26:08.211 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 7720 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 10:26:15.492 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.503 seconds (JVM running for 8.261)
+ 2016-12-02 10:26:56.563 [http-nio-8084-exec-10] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 10:26:56.564 [http-nio-8084-exec-10] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:22:48.586 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 7272 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:22:55.956 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.606 seconds (JVM running for 8.393)
+ 2016-12-02 11:23:17.257 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 9468 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:23:24.587 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.565 seconds (JVM running for 8.34)
+ 2016-12-02 11:23:47.420 [http-nio-8084-exec-3] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:23:47.420 [http-nio-8084-exec-3] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:28:30.510 [http-nio-8084-exec-8] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:28:30.510 [http-nio-8084-exec-8] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:31:50.710 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 12092 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:31:57.935 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.465 seconds (JVM running for 8.22)
+ 2016-12-02 11:32:07.583 [http-nio-8084-exec-5] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:32:07.584 [http-nio-8084-exec-5] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:44:35.643 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 12836 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:44:43.402 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.04 seconds (JVM running for 8.817)
+ 2016-12-02 11:45:07.371 [http-nio-8084-exec-7] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:45:07.371 [http-nio-8084-exec-7] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:52:31.630 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 12256 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:52:39.631 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.242 seconds (JVM running for 9.024)
+ 2016-12-02 11:52:46.203 [http-nio-8084-exec-2] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:52:46.204 [http-nio-8084-exec-2] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:53:12.544 [http-nio-8084-exec-10] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:53:12.545 [http-nio-8084-exec-10] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:53:39.723 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 12396 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:53:47.609 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.117 seconds (JVM running for 8.889)
+ 2016-12-02 11:53:57.592 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 13200 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:55:14.952 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 12120 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:55:22.931 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.209 seconds (JVM running for 8.999)
+ 2016-12-02 11:56:15.763 [http-nio-8084-exec-9] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:56:15.764 [http-nio-8084-exec-9] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:57:01.836 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 14332 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:57:10.009 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.394 seconds (JVM running for 9.175)
+ 2016-12-02 11:57:23.743 [http-nio-8084-exec-9] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:57:23.744 [http-nio-8084-exec-9] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 11:58:07.422 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 12236 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 11:58:15.364 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.173 seconds (JVM running for 8.943)
+ 2016-12-02 11:58:26.888 [http-nio-8084-exec-9] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 11:58:26.889 [http-nio-8084-exec-9] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 12:04:20.021 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 14196 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 12:04:28.038 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.247 seconds (JVM running for 9.009)
+ 2016-12-02 12:04:35.558 [http-nio-8084-exec-10] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 12:04:35.559 [http-nio-8084-exec-10] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 12:51:57.467 [http-nio-8084-exec-10] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 12:51:57.468 [http-nio-8084-exec-10] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 12:53:25.598 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 16992 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 12:53:34.077 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.731 seconds (JVM running for 9.536)
+ 2016-12-02 12:55:01.215 [http-nio-8084-exec-1] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 12:55:01.215 [http-nio-8084-exec-1] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 12:55:43.418 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 16868 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 12:55:51.552 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.371 seconds (JVM running for 9.17)
+ 2016-12-02 12:56:27.792 [http-nio-8084-exec-4] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 12:56:27.793 [http-nio-8084-exec-4] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 12:59:11.175 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 18268 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 12:59:20.408 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 9.48 seconds (JVM running for 10.247)
+ 2016-12-02 12:59:29.472 [http-nio-8084-exec-3] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-12-02 12:59:29.473 [http-nio-8084-exec-3] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 13:06:40.378 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 19024 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:06:49.647 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 9.523 seconds (JVM running for 10.344)
+ 2016-12-02 13:12:01.785 [http-nio-8084-exec-1] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+jiulong  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF001","inituser":"admin","params":[]}]
+ 2016-12-02 13:12:01.786 [http-nio-8084-exec-1] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 13:12:30.324 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 17300 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:12:38.377 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.301 seconds (JVM running for 9.061)
+ 2016-12-02 13:14:00.897 [http-nio-8084-exec-3] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+jiulong  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF001","inituser":"admin","params":[]}]
+ 2016-12-02 13:14:00.898 [http-nio-8084-exec-3] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 13:17:48.255 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 21268 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:17:58.175 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.164 seconds (JVM running for 10.967)
+ 2016-12-02 13:19:16.297 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 21900 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:19:25.444 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 9.404 seconds (JVM running for 10.231)
+ 2016-12-02 13:19:35.952 [http-nio-8084-exec-3] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:118] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+jiulong  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF001","inituser":"admin","params":[]}]
+ 2016-12-02 13:19:35.953 [http-nio-8084-exec-3] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 13:19:47.544 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 18872 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:19:58.232 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.982 seconds (JVM running for 12.189)
+ 2016-12-02 13:26:02.598 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 24964 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:26:13.166 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.857 seconds (JVM running for 11.83)
+ 2016-12-02 13:27:07.866 [http-nio-8084-exec-2] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:118] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+jiulong  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF001","inituser":"admin","params":[]}]
+ 2016-12-02 13:27:07.866 [http-nio-8084-exec-2] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 2016-12-02 13:33:36.056 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 30624 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:33:46.409 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.636 seconds (JVM running for 11.657)
+ 2016-12-02 13:36:59.347 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 31456 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:37:09.969 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.966 seconds (JVM running for 11.971)
+ 2016-12-02 13:40:07.309 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 31728 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:40:17.905 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.945 seconds (JVM running for 11.898)
+ 2016-12-02 13:43:11.336 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 32040 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 13:43:21.903 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 10.855 seconds (JVM running for 11.872)
+ 2016-12-02 13:43:43.927 [http-nio-8084-exec-3] INFO 
+				ServiceAspectAdvice[ServiceAspectAdvice.java:61] - jiulong  #doAfter advice#  return:{"paramre":"","result":"","paramreStr":""}
+ 2016-12-02 13:43:43.939 [http-nio-8084-exec-3] INFO 
+				ServiceAspectAdvice[ServiceAspectAdvice.java:61] - jiulong  #doAfter advice#  return:{"paramre":"","result":{"wfId":147001,"currTasks":[813065]},"paramreStr":""}
+ 2016-12-02 13:50:28.347 [http-nio-8084-exec-9] INFO 
+				ServiceAspectAdvice[ServiceAspectAdvice.java:61] - jiulong  #doAfter advice#  return:{"paramre":"","result":[{"wfId":147001,"createUser":"admin","fileName":"crebas.sql","fileId":4123,"timecost":65},{"wfId":147001,"createUser":"admin","fileName":"SangforServiceClient_2016727.log","fileId":4124,"timecost":23}],"paramreStr":""}
+ 2016-12-02 15:02:16.205 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 6932 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 15:02:24.905 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.933 seconds (JVM running for 9.778)
+ 2016-12-02 15:02:43.943 [http-nio-8084-exec-6] INFO 
+				ServiceAspectAdvice[ServiceAspectAdvice.java:61] - jiulong  #doAfter advice#  return:{"paramre":"","result":[{"wfId":147001,"createUser":"admin","fileName":"crebas.sql","fileId":4125,"timecost":109},{"wfId":147001,"createUser":"admin","fileName":"SangforServiceClient_2016727.log","fileId":4126,"timecost":49}],"paramreStr":""}
+ 2016-12-02 15:08:12.139 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 33076 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-12-02 15:08:20.706 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 8.793 seconds (JVM running for 9.57)
+ 2016-12-02 15:08:44.267 [http-nio-8084-exec-1] INFO 
+				ServiceAspectAdvice[ServiceAspectAdvice.java:61] - jiulong  #doAfter advice#  return:{"paramre":"","result":[{"wfId":147001,"createUser":"admin","fileName":"crebas.sql","fileId":4127,"timecost":59},{"wfId":147001,"createUser":"admin","fileName":"msgpic.jpg","fileId":4128,"timecost":54}],"paramreStr":""}
+ 2016-12-02 15:10:11.829 [http-nio-8084-exec-2] INFO 
+				ServiceAspectAdvice[ServiceAspectAdvice.java:61] - jiulong  #doAfter advice#  return:{"paramre":"","result":[{"wfId":147001,"createUser":"admin","fileName":"crebas.sql","fileId":4129,"timecost":29},{"wfId":147001,"createUser":"admin","fileName":"软件设计师笔记.pdf","fileId":4130,"timecost":18}],"paramreStr":""}
+ 

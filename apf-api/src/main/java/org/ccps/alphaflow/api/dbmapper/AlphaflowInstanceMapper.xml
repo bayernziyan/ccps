@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper" >
+
+	<parameterMap id="initWorkflowParameter" type="Map">
+        <parameter property="o_reqId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_formDataId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_fullUserName" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_startTaskId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_formId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_sendId" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="i_wfDef" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <parameter property="i_initUser" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+    </parameterMap>
+    
+    
+	
+    <select id="initWorkflow" parameterMap="initWorkflowParameter" statementType="CALLABLE"  >  
+	    <![CDATA[  
+	       {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+	    ]]>  
+    </select>  
+  
+   	<select id="cancelAlphaflowByWfId"  statementType="CALLABLE"  >  
+	    <![CDATA[  
+	     	 {call newsoft.sp_eccm_ccf(2,#{wfId,mode=IN,jdbcType=INTEGER},#{userId,mode=IN,jdbcType=VARCHAR})}
+	    ]]>  
+    </select> 
+
+	<select id="getAlphaflowInstanceList"  statementType="CALLABLE" parameterType="org.ccps.alphaflow.api.pojo.SearchListExample" resultType="org.ccps.alphaflow.api.pojo.AlphaflowInstanceBean" >  
+	  
+	   select * from (
+	   select  request_id wfId,request_desc wfName,str_att_1 wfCode,form_id formId,form_data_id formDataId,init_id initUserId,create_date createDate, (select name from newsoft.ecl_groups where id=group_id) category,(select name from newsoft.ecl_groups where id=sub_group_id) sub_category,status_id from newsoft.ecl_request_sheet
+	    <where >
+	      container_type=4
+	      <foreach collection="oredCriteria" item="criteria" separator="or" >
+	        <if test="criteria.valid" > 
+	           and 
+	          <trim prefix="(" suffix=")" prefixOverrides="and" >
+	            <foreach collection="criteria.criteria" item="criterion" >
+	              <choose >
+	                <when test="criterion.noValue" >
+	                  and ${criterion.condition}
+	                </when>
+	                <when test="criterion.singleValue" >
+	                  and ${criterion.condition} #{criterion.value}
+	                </when>
+	                <when test="criterion.betweenValue" >
+	                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+	                </when>
+	                <when test="criterion.listValue" >
+	                  and ${criterion.condition}
+	                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+	                    #{listItem}
+	                  </foreach>
+	                </when>
+	              </choose>
+	            </foreach>
+	          </trim>
+	        </if>
+	      </foreach>
+    	</where>
+    	)
+	   <if test="orderByClause != null" >
+     		 order by ${orderByClause}
+   	   </if> 
+   	
+    </select>  
+  
+	
+  
+  
+  	 <select id = "getAlphaflowNumByWfId"  resultType="java.lang.Integer"  >  
+  	 	<![CDATA[  
+	       select count(1) from  newsoft.ecl_request_sheet  where container_type = 4 and request_id=#{wfId}
+	    ]]>  
+   	 </select>
+  
+  	<select id="getNewAlphaflowFileId" resultType="java.lang.Integer"  >  
+	    <![CDATA[  
+	       select newsoft.ECL_REQUEST_FILE_SEQ.NEXTVAL AS NEXTID FROM DUAL
+	    ]]>  
+    </select>  
+    
+    <select id="getAlphaflowInstanceByWfId" resultType="org.ccps.alphaflow.api.pojo.AlphaflowInstanceBean" parameterType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select request_id wfId,request_desc wfName,str_att_1 wfCode,form_id formId,form_data_id formDataId,init_id initUserId,create_date createDate, (select name from newsoft.ecl_groups where id=group_id) category,(select name from newsoft.ecl_groups where id=sub_group_id) sub_category,status_id  from newsoft.ecl_request_sheet where container_type = 4 and request_id=#{wfId}
+	    ]]>  
+    </select>  
+    
+    <select id="getAlphaflowInstanceTaskList" resultType="org.ccps.alphaflow.api.pojo.AlphaflowTaskBean">
+  		<![CDATA[
+  			select t.id task_id,t.task_name, t.task_desc, t.type_id,t.status_id, t.task_level,t.order_id,t.priority_id,t.assigner,t.action_group_id,  
+               t.assignee_type, t.assignee,t.assignee_name,t.request_id wfId,t.prior_task_id, t.position_x, t.position_y, t.control_id, a.end_task_id, a.end_task_level, 
+               e.task_name as end_task_name, e.type_id as end_task_type_id, e.status_id as end_task_status_id, e.assignee_type as end_task_assignee_type, e.assignee as end_task_assignee, e.assignee_name as end_task_assignee_name, e.control_id as end_task_control_id, a.pos_str,a.cond_str,a.path_ind,a.line_type
+               from newsoft.ecl_tasks t left join newsoft.ecl_task_association a  
+               ON t.id = a.start_task_id left join newsoft.ecl_tasks e  
+               ON e.id = end_task_id  
+             where t.request_id =#{wfId} and nvl(t.status_id,0) != 11 and nvl(e.status_id,0) != 11
+              order by t.order_id , t.task_level  		
+  		]]>  	
+  	</select>
+    
+    <!-- 撤回流程 -->
+    <select id="revokeAlphaflowByWfId" statementType="CALLABLE" resultType="java.lang.Integer"  >  
+	    <![CDATA[  
+	       {call newsoft.sp_eccm_backoff(#{wfId,mode=IN,jdbcType=INTEGER},#{userId,mode=IN,jdbcType=VARCHAR},#{returnCode,mode=OUT,jdbcType=INTEGER})}
+	    ]]>  
+    </select> 
+    
+    <select id="jumpAlphaflowTask" statementType="CALLABLE" >
+    	 <![CDATA[  
+	       {call newsoft.sp_eccm_wjt(#{wfId,mode=IN,jdbcType=INTEGER},#{taskFrom,mode=IN,jdbcType=INTEGER},#{taskTo,mode=IN,jdbcType=INTEGER},#{userId,mode=IN,jdbcType=VARCHAR})}
+	    ]]>  
+    </select>
+    
+    
+    <insert id="addAlphaflowFile" parameterType="org.ccps.alphaflow.api.pojo.RequestFileBean" >
+   		<![CDATA[  
+	   	    INSERT INTO newsoft.ECL_REQUEST_FILES ( ID, TITLE, REQUEST_ID,
+    		REQUEST_FILE_DESC, REQUEST_FILE_NAME,TYPE,FILE_TYPE,FILE_SIZE,FILE_LEVEL,PARENT_ID,DISPLAY_FLAG,CAN_DOWNLOAD,
+    		READONLY_FLAG,PUB_FLAG, str_att_1, int_att_1,CREATE_USER, last_mod_user,wp_id,order_id,
+    		group_id,subgroup_id,flag,keywords,summary,search_key_index,file_path_flag,related_item_id,doc_server_index,url) VALUES (
+    		#{id},#{title},#{requestId},
+    		#{desc ,jdbcType=VARCHAR},#{fileName ,jdbcType=VARCHAR},#{type,jdbcType=INTEGER},#{fileType,jdbcType=VARCHAR},#{fileSize,jdbcType=VARCHAR},#{fileLevel,jdbcType=INTEGER},#{parentId},#{display_flag},#{canDownload}
+    		,#{lock_flag},#{pub_flag},#{str_att_1,jdbcType=VARCHAR},#{int_att_1,jdbcType=VARCHAR},#{createUser},#{createUser},#{wp_id ,jdbcType=INTEGER},#{order_id,jdbcType=INTEGER},#{group_id,jdbcType=INTEGER},#{subgroup_id,jdbcType=INTEGER}
+    		,#{flag,jdbcType=INTEGER},#{keyword,jdbcType=VARCHAR},#{summary,jdbcType=VARCHAR},#{searchKeyIndex,jdbcType=VARCHAR},3,#{related_item_id ,jdbcType=INTEGER},0,#{url,jdbcType=VARCHAR})
+	    ]]>  
+    </insert>  
+    
+   	
+  	
+  
+</mapper>

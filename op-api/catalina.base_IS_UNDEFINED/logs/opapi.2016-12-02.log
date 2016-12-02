@@ -1,0 +1,59 @@
+2016-12-02 09:04:21.469 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 6548 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:04:21.469 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:04:27.748 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.51 seconds (JVM running for 7.27)
+ 2016-12-02 09:08:25.135 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 2556 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:08:25.135 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:09:04.947 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 2760 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:09:04.947 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:09:10.803 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.087 seconds (JVM running for 6.817)
+ 2016-12-02 09:10:50.469 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 5164 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:10:50.469 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:10:56.429 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.181 seconds (JVM running for 6.941)
+ 2016-12-02 09:15:40.289 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 6372 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:15:40.290 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:15:46.164 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.107 seconds (JVM running for 6.837)
+ 2016-12-02 09:23:06.253 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 6708 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:23:06.254 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:23:12.006 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 5.97 seconds (JVM running for 6.74)
+ 2016-12-02 09:30:23.271 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 356 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:30:23.272 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:30:28.968 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 5.931 seconds (JVM running for 6.702)
+ 2016-12-02 09:31:01.868 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 6804 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:31:01.868 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:31:07.700 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.05 seconds (JVM running for 6.818)
+ 2016-12-02 09:32:08.431 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 1504 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:32:08.432 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:32:14.224 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.008 seconds (JVM running for 6.742)
+ 2016-12-02 09:36:57.839 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:47] - Starting OpApiApplication on bayern-PC with PID 1672 (E:\epworkspace\ccps_boot\ccps\op-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\op-api)
+ 2016-12-02 09:36:57.840 [main] DEBUG
+				OpApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-12-02 09:37:03.665 [main] INFO 
+				OpApiApplication[StartupInfoLogger.java:56] - Started OpApiApplication in 6.041 seconds (JVM running for 6.776)
+ 

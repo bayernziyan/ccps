@@ -1,0 +1,40 @@
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+	
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- <file>${catalina.base}/logs/apfapi.log</file> -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<FileNamePattern>${catalina.base}/logs/opapi.%d{yyyy-MM-dd}.log
+			</FileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<Pattern>%-15d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{0}[%file:%line] - %msg%n %ex{2}</Pattern>
+			<charset>UTF-8</charset>
+			<immediateFlush>true</immediateFlush>
+		</encoder>
+	</appender>
+	
+	
+	<logger name="org.springframework.web" level="DEBUG"/>
+	<!--logback.LogbackDemo：类的全路径 -->
+	<logger name="org.ccps"  level="WARN" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+
+
+	<jmxConfigurator />
+</configuration>

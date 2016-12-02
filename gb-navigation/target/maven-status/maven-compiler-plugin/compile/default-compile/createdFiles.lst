@@ -1,0 +1,7 @@
+org\ccps\navigation\controller\NavigationResource.class
+org\ccps\navigation\NavigationApplication.class
+org\ccps\navigation\controller\NavigationController.class
+org\ccps\navigation\controller\NavPathFragment.class
+org\ccps\navigation\config\ControllerConfiguration.class
+org\ccps\navigation\controller\NavRelation.class
+org\ccps\navigation\config\ApplicationConfiguration.class

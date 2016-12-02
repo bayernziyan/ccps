@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.hongqt.AlphaflowFormMapperHONGQT" >
+	
+    
+     
+	<select id="getFormItemTypeList" resultType="org.ccps.alphaflow.api.pojo.AlphaflowFormItem" parameterType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select  id,type_id,item_name,def_field_id,key_value_flag,key_value_list,parent_id,template_item_id from newsoft.ecl_request_form_item where form_id=#{formId,jdbcType=INTEGER} and def_field_id is not null
+	    ]]>  
+    </select>
+    
+    <select id="getFormGridItemTypeList" resultType="org.ccps.alphaflow.api.pojo.AlphaflowFormItem"  >  
+	    <![CDATA[  
+	       select  id,type_id,item_name,def_field_id,key_value_flag,key_value_list,parent_id,sub_type_id,template_item_id from newsoft.ecl_request_form_item where form_id=#{formId,jdbcType=INTEGER} and parent_id=#{parentId,jdbcType=INTEGER} order by order_id
+	    ]]>  
+    </select>
+    
+    
+    <select id="getAlphaflowItemIdByItemDef" resultType="java.lang.Integer"  >  
+	    <![CDATA[  
+	       select  id from newsoft.ecl_request_form_item where  def_field_id=#{itemDef}
+	    ]]>  
+    </select>
+	
+	<select id="getAlphaflowItemBeanByItemDef" resultType="org.ccps.alphaflow.api.pojo.AlphaflowFormItem">
+		<![CDATA[  
+	       select id,item_name,action_group_id,def_field_id,template_item_id from newsoft.ecl_request_form_item where  def_field_id=#{itemDef} and form_id =#{formId}
+	    ]]>
+	</select>
+	
+  	
+</mapper>

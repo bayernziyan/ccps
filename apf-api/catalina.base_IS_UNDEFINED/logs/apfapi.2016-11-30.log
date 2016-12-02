@@ -1,0 +1,82 @@
+2016-11-30 13:30:56.856 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 9560 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-11-30 13:30:56.857 [main] DEBUG
+				ApfApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-11-30 13:31:04.379 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.766 seconds (JVM running for 8.541)
+ 2016-11-30 13:33:25.396 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 9452 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-11-30 13:33:25.397 [main] DEBUG
+				ApfApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-11-30 13:33:33.124 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.956 seconds (JVM running for 8.785)
+ 2016-11-30 13:48:03.200 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 10516 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-11-30 13:48:03.201 [main] DEBUG
+				ApfApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-11-30 13:48:10.560 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 7.599 seconds (JVM running for 8.419)
+ 2016-11-30 14:09:12.812 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 10096 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-11-30 14:09:12.812 [main] DEBUG
+				ApfApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-11-30 14:09:22.058 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 9.466 seconds (JVM running for 10.291)
+ 2016-11-30 14:23:22.375 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:47] - Starting ApfApiApplication on bayern-PC with PID 4596 (E:\epworkspace\ccps_boot\ccps\apf-api\target\classes started by bayern in E:\epworkspace\ccps_boot\ccps\apf-api)
+ 2016-11-30 14:23:22.376 [main] DEBUG
+				ApfApiApplication[StartupInfoLogger.java:50] - Running with Spring Boot v1.2.7.RELEASE, Spring v4.1.8.RELEASE
+ 2016-11-30 14:23:31.992 [main] INFO 
+				ApfApiApplication[StartupInfoLogger.java:56] - Started ApfApiApplication in 9.895 seconds (JVM running for 10.854)
+ 2016-11-30 14:31:27.446 [http-nio-8084-exec-10] DEBUG
+				ServiceAspectAdvice[ServiceAspectAdvice.java:69] -   #doAround advice# start
+ 2016-11-30 14:31:27.455 [http-nio-8084-exec-10] DEBUG
+				ServiceAspectAdvice[ServiceAspectAdvice.java:49] -   #doBefore advice# className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-11-30 14:31:27.472 [http-nio-8084-exec-10] DEBUG
+				initWorkflow[BaseJdbcLogger.java:139] - ==>  Preparing: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)} 
+ 2016-11-30 14:31:27.546 [http-nio-8084-exec-10] DEBUG
+				initWorkflow[BaseJdbcLogger.java:139] - ==> Parameters: WF002(String), bill(String)
+ 2016-11-30 14:31:28.715 [http-nio-8084-exec-10] ERROR
+				ServiceAspectAdvice[ServiceAspectAdvice.java:117] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+  #className:class org.ccps.alphaflow.api.service.impl.AlphaflowInstanceServiceImpl	 methodName:initAlphaflow	 arguments:[{"wfdef":"WF002","inituser":"bill","params":[]}]
+ 2016-11-30 14:31:28.717 [http-nio-8084-exec-10] ERROR
+				ExceptionUtil[ExceptionUtil.java:14] - 
+### Error querying database.  Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+### The error may exist in org/ccps/alphaflow/api/dbmapper/AlphaflowInstanceMapper.xml
+### The error may involve org.ccps.alphaflow.api.dbmapper.AlphaflowInstanceMapper.initWorkflowParameter
+### The error occurred while setting parameters
+### SQL: {call newsoft.sp_ws_start_wf(?,?,?,?,?,?,?,?)}
+### Cause: java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+; bad SQL grammar []; nested exception is java.sql.SQLException: ORA-06550: 第 1 行, 第 7 列: 
+PLS-00201: 必须声明标识符 'NEWSOFT.SP_WS_START_WF'
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+ 

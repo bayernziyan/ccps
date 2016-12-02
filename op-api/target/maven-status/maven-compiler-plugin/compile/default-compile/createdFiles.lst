@@ -1,0 +1,6 @@
+org\ccps\op\api\dbmapper\TestMapper.class
+org\ccps\op\api\config\ControllerConfiguration.class
+org\ccps\op\api\controller\TestController.class
+org\ccps\op\api\config\ApplicationConfiguration.class
+org\ccps\op\api\service\TestService.class
+org\ccps\op\api\OpApiApplication.class

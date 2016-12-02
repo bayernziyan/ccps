@@ -1,0 +1,8 @@
+org\ccps\common\db\WhDbMapper.class
+org\ccps\common\db\OpDbMapper.class
+org\ccps\common\db\MyBatisConfig.class
+org\ccps\common\db\MultipleDataSourceAspectAdvice.class
+org\ccps\common\db\DatabaseType.class
+org\ccps\common\db\MultipleDataSource.class
+org\ccps\common\db\DynamicDataSource.class
+org\ccps\common\db\DatabaseContextHolder.class

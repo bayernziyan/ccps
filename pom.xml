@@ -1,0 +1,212 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>econage.com</groupId>
+	<artifactId>ccps</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>ccps</name>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.7.RELEASE</version>
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- <junit.version>4.12</junit.version> <spring.version>4.1.3.RELEASE</spring.version> 
+			<mybatis.version>3.2.8</mybatis.version> <mybatis.spring.version>1.2.2</mybatis.spring.version> 
+			<mybatis.paginator.version>1.2.15</mybatis.paginator.version> <mysql.version>5.1.32</mysql.version> 
+			<slf4j.version>1.6.4</slf4j.version> <druid.version>1.0.9</druid.version> 
+			<jstl.version>1.2</jstl.version> <servlet-api.version>2.5</servlet-api.version> 
+			<jsp-api.version>2.0</jsp-api.version> <joda-time.version>2.5</joda-time.version> 
+			<commons-lang3.version>3.3.2</commons-lang3.version> <commons-io.version>1.3.2</commons-io.version> 
+			<commons-net.version>3.3</commons-net.version> <pagehelper.version>3.4.2-fix</pagehelper.version> 
+			<jsqlparser.version>0.9.1</jsqlparser.version> <jedis.version>2.7.2</jedis.version> 
+			<json-lib.version>2.4</json-lib.version> <standard.version>1.1.2</standard.version> 
+			<pinyin4j.version>2.5.0</pinyin4j.version> <wsdl4j.version>1.6.3</wsdl4j.version> 
+			<XmlSchema.version>1.4.7</XmlSchema.version> <soapui.version>4.0.1.0</soapui.version> 
+			<httpclient.version>4.5.2</httpclient.version> <commons-httpclient.version>3.1</commons-httpclient.version> 
+			<xbean.version>2.2.0</xbean.version> <xmlbeans.version>2.6.0</xmlbeans.version> 
+			<soapui-xmlbeans.version>4.5.1</soapui-xmlbeans.version> <commons-cli.version>1.2</commons-cli.version> 
+			<not-yet-commons-ssl.version>0.3.11</not-yet-commons-ssl.version> <bcprov-jdk15on.version>1.54</bcprov-jdk15on.version> 
+			<xercesImpl.version>2.8.0</xercesImpl.version> <mail.version>1.4.7</mail.version> 
+			<ojdbc6.version>11.2.0.4</ojdbc6.version> <quartz.version>2.2.3</quartz.version> 
+			<commons-collections.version>3.2.2</commons-collections.version> <org.apache.commons.fileupload.version>1.2.0</org.apache.commons.fileupload.version> 
+			<org.apache.commons.io.version>1.4.0</org.apache.commons.io.version> <spring-data-redis.version>1.6.0.RELEASE</spring-data-redis.version> -->
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- 时间操作组件 -->
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>2.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.0</version>
+			</dependency>
+			<!-- Jackson Json处理工具包 -->
+
+			<dependency>
+				<groupId>net.sf.json-lib</groupId>
+				<artifactId>json-lib</artifactId>
+				<version>2.4</version>
+				<classifier>jdk15</classifier>
+			</dependency>
+
+
+			<!-- 日志处理 -->
+			<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+				<version>${slf4j.version}</version> </dependency> -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.6.4</version>
+			</dependency>
+			<!-- Mybatis -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>3.2.7</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>1.2.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.miemiedev</groupId>
+				<artifactId>mybatis-paginator</artifactId>
+				<version>1.2.15</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>3.4.2-fix</version>
+			</dependency>
+
+			<!-- Spring -->
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-starter-client</artifactId>
+				<version>1.2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server</artifactId>
+				<version>1.2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui</artifactId>
+				<version>1.2.4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<version>1.2.7.RELEASE</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.miemiedev</groupId>
+				<artifactId>mybatis-paginator</artifactId>
+				<version>1.2.15</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>3.4.2-fix</version>
+			</dependency>
+			<!-- Redis客户端 -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.7.2</version>
+			</dependency>
+			<!-- Spring Data Redis -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>1.6.0.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.belerweb</groupId>
+				<artifactId>pinyin4j</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+			<!-- quartz -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>2.2.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-servlet_2.4_spec</artifactId>
+				<version>1.1.1</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<!-- 资源文件拷贝插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- java编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 配置Tomcat插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+			<!-- maven打包的时候告诉maven不需要web.xml,否刚会报找不到web.xml错误 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+	<modules>
+		<module>op-core</module>
+		<module>gb-common</module>
+		<module>api-oauth2</module>
+		<module>gb-monitor</module>
+		<module>op-api</module>
+		<module>gb-navigation</module>
+		<module>apf-api</module>
+		<module>gb-db-common</module>
+	</modules>
+</project>

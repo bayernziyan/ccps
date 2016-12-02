@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.jiulong.AlphaflowTaskMapperJIULONG" >
+	
+	<parameterMap id="wttaWorkflowParameter" type="Map">
+        <parameter property="i_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_wf_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_form_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_form_data_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        <parameter property="i_sender_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+        
+        <parameter property="i_user_id1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        
+       <!--  <parameter property="i_task_complete_status" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_assigned_status" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_workflow_complete_status" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_task_submit_application" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+        <parameter property="i_task_finish_workflow" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" /> -->
+        <!-- <parameter property="i_task_note" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <parameter property="i_def_Y" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/> -->
+        <parameter property="i_user_id2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <!--<parameter property="i_def_0" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>-->
+        
+        <!-- 16 -->
+        <parameter property="o_post_cmd" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_post_param" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_next_sender_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_next_receiver_list" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        <parameter property="o_next_task_type_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_post_cmd_data_source" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+        
+        <parameter property="o_is_flow_down" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_mq_send" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+        <parameter property="o_mq_nexttaskname" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+      <!--   <parameter property="o_deal_to_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/> -->
+        <parameter property="o_next_task_list" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/> 
+    </parameterMap>
+
+	
+
+	<!-- 20参数 -->     <!-- ,?,?,?,?,? -->
+	<select id="alphaflowTaskForward" parameterMap="wttaWorkflowParameter" statementType="CALLABLE">
+		<![CDATA[
+			{ call newsoft.sp_eccm_wtta(?,?,?,?,?,?,6,1,3,2,11,'','Y',?,?,?,?,?,?,?,?,?,?,?) } 
+		]]>	
+	</select>
+  	
+  	
+  	
+</mapper>
