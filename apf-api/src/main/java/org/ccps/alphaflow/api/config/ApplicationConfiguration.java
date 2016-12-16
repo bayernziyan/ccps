@@ -3,7 +3,6 @@ package org.ccps.alphaflow.api.config;
 import java.util.Map;
 
 import org.ccps.alphaflow.api.ServiceAspectAdvice;
-import org.ccps.alphaflow.api.TraceControllerAspectAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.trace.InMemoryTraceRepository;
 import org.springframework.boot.actuate.trace.TraceRepository;
@@ -22,7 +21,7 @@ import org.thymeleaf.templateresolver.UrlTemplateResolver;
 @Configuration 
 @Import({org.ccps.common.oauth2.SecurityConfig.class, 
 	org.ccps.common.db.MyBatisConfig.class,org.ccps.common.db.MultipleDataSourceAspectAdvice.class,
-	ServiceAspectAdvice.class,TraceControllerAspectAdvice.class,
+	ServiceAspectAdvice.class,
 	ControllerConfiguration.class
 })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {

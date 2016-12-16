@@ -71,7 +71,7 @@
 			<groupId>org.apache.geronimo.specs</groupId>
 			<artifactId>geronimo-servlet_2.4_spec</artifactId>
 			<scope>provided</scope>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -80,22 +80,19 @@
 	</dependencies>
 
 	<build>
-		<!-- <plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins> -->
-	
-	
+		<!-- <plugins> <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+			</plugin> </plugins> -->
+
+
 		<finalName>apfapi</finalName>
-		<!-- <resources>
+		<resources>
 			<resource>
 				<directory>src/main/java</directory>
 				<includes>
 					<include>**/*.properties</include>
 					<include>**/*.xml</include>
 					<include>**/*.tld</include>
+					<include>**/*.txt</include>
 				</includes>
 				<filtering>true</filtering>
 			</resource>
@@ -108,7 +105,8 @@
 				</includes>
 				<filtering>true</filtering>
 			</resource>
-		</resources> -->
+
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -117,7 +115,20 @@
 					<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
 				</configuration>
 				<!-- mvn spring-boot:repackage -->
-				
+
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<delimiter>@</delimiter>
+					</delimiters>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -125,13 +136,11 @@
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<warName>apfapi</warName>
-
 				</configuration>
 			</plugin>
-		</plugins> 
+		</plugins>
 	</build>
 
-	<version>0.0.1-SNAPSHOT</version>
 	<groupId>econage.com</groupId>
 	<packaging>war</packaging>
 </project>

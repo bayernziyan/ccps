@@ -1,7 +1,7 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 	<property name="LOG_FILE"
-		value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}" />
+		value="${catalina.base}/logs/apfapi/spring.log" />
 	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
 
 	<appender name="STDOUT"
@@ -9,7 +9,7 @@
 		<!-- <file>${catalina.base}/logs/apfapi.log</file> -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
-			<FileNamePattern>${catalina.base}/logs/apfapi.%d{yyyy-MM-dd}.log
+			<FileNamePattern>${catalina.base}/logs/apfapi/apfapi.%d{yyyy-MM-dd}.log
 			</FileNamePattern>
 			<!-- keep 30 days' worth of history -->
 			<maxHistory>30</maxHistory>
@@ -31,6 +31,17 @@
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>INFO</level>
 		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<FileNamePattern>${catalina.base}/logs/apfapi/spring.%d{yyyy-MM-dd}.log
+			</FileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
 		<encoder>
 			<pattern>
 				%-15d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
