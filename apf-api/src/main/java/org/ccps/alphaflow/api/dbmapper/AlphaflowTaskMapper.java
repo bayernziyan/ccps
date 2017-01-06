@@ -6,11 +6,10 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 import org.ccps.alphaflow.api.pojo.AlphaflowTaskBean;
-import org.ccps.common.db.WhDbMapper;
+import org.ccps.common.db.repository.WhDbRepository;
 
-import net.sf.json.JSONObject;
-
-public interface AlphaflowTaskMapper extends WhDbMapper {	
+@WhDbRepository
+public interface AlphaflowTaskMapper {	
 	
 	public Integer getWfIdByTaskId(@Param(value = "taskId") Integer taskId) throws SQLException;
 	

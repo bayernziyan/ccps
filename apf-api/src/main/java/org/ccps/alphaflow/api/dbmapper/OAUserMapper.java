@@ -5,9 +5,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.ccps.alphaflow.api.pojo.UserBean;
-import org.ccps.common.db.WhDbMapper;
+import org.ccps.common.db.repository.WhDbRepository;
 
-public interface OAUserMapper extends WhDbMapper {
+@WhDbRepository
+public interface OAUserMapper {
 	
 	public UserBean getUserBeanByUserId(@Param(value="userId") String userId) throws SQLException;
 	public UserBean getUserBeanByReqId(@Param(value="userReqId") Integer userReqId) throws SQLException;

@@ -6,9 +6,10 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.ccps.alphaflow.api.pojo.AlphaflowTemplateBean;
 import org.ccps.alphaflow.api.pojo.SearchListExample;
-import org.ccps.common.db.WhDbMapper;
+import org.ccps.common.db.repository.WhDbRepository;
 
-public interface AlphaflowTemplateMapper extends WhDbMapper {
+@WhDbRepository
+public interface AlphaflowTemplateMapper {
 	
 	public Integer getAlphaflowGroupIdByName(@Param("name") String name) throws SQLException;
 	

@@ -6,8 +6,10 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 import org.ccps.alphaflow.api.pojo.AlphaflowFormItem;
+import org.ccps.common.db.repository.WhDbRepository;
 
 import net.sf.json.JSONObject;
+@WhDbRepository
 public interface AlphaflowFormMapperHONGQT {	
 	/**
 	 * 通过表单组件标识获取组件ID

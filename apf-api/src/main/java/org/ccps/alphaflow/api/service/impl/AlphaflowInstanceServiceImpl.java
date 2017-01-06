@@ -131,7 +131,7 @@ public class AlphaflowInstanceServiceImpl implements AlphaflowInstanceService {
             MultipartFile file = multiRequest.getFile(iter.next());  
             if(file != null){  
                 //取得当前上传文件的文件名称  
-                String myFileName = file.getOriginalFilename();  
+                String myFileName = file.getName();// file.getOriginalFilename();  
                 reobj.put("fileName", myFileName);
                 //如果名称不为“”,说明该文件存在，否则说明该文件不存在  
                 if(myFileName.trim() !=""){  

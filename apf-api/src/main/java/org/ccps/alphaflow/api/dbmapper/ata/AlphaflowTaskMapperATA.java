@@ -1,15 +1,12 @@
 package org.ccps.alphaflow.api.dbmapper.ata;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Param;
-import org.ccps.common.db.WhDbMapper;
+import org.ccps.common.db.repository.WhDbRepository;
 
-import net.sf.json.JSONObject;
-
-public interface AlphaflowTaskMapperATA extends WhDbMapper {	
+@WhDbRepository
+public interface AlphaflowTaskMapperATA  {	
 
 	/**
 	 * 执行wtta

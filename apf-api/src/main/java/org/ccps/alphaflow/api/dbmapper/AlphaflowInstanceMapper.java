@@ -9,11 +9,10 @@ import org.ccps.alphaflow.api.pojo.AlphaflowInstanceBean;
 import org.ccps.alphaflow.api.pojo.AlphaflowTaskBean;
 import org.ccps.alphaflow.api.pojo.RequestFileBean;
 import org.ccps.alphaflow.api.pojo.SearchListExample;
-import org.ccps.common.db.WhDbMapper;
+import org.ccps.common.db.repository.WhDbRepository;
 
-import net.sf.json.JSONObject;
-
-public interface AlphaflowInstanceMapper extends WhDbMapper {	
+@WhDbRepository
+public interface AlphaflowInstanceMapper {	
 	//启动流程 返回流程reqid
 	public String initWorkflow(Map params) throws SQLException;
 	

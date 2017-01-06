@@ -3,10 +3,12 @@ package org.ccps.common.oauth2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 //import org.springframework.data.redis.connection.RedisConnectionFactory;
 //import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -30,6 +32,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 //import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
+
 public class SecurityConfig {
 
 	
@@ -53,8 +56,11 @@ public class SecurityConfig {
 		@Autowired
 		protected void globalAuthentication(AuthenticationManagerBuilder auth)
 				throws Exception {
+			//auth.inMemoryAuthentication()
 			auth.inMemoryAuthentication().withUser("econage").password("econage123")
-					.roles("USER");
+			.roles("ADMIN").and().withUser("aaa").password("aaa")
+			.roles("USER");;
+			
 		}
 
 		@Bean(name = "authenticationManager")
@@ -80,7 +86,10 @@ public class SecurityConfig {
 			http
 			.authorizeRequests()
             .antMatchers("/mappings/**","/env/**","/health/**","/metrics/**","/trace/**","/dump/**","/beans/**","/info/**","/autoconfig/**","/configprops/**","/logfile/**","/jolokia/**").permitAll()
-            .anyRequest().authenticated().and().csrf().disable();//.and().httpBasic()
+           /* .antMatchers("/oauth/token").permitAll()
+            .antMatchers("/user/list/**","/dept/list/**")
+            .access("hasRole('ROLE_USER')").anyRequest().denyAll()*/
+            .and().csrf().disable()//.and().httpBasic()
 			//.and()
 				;
 			// @formatter:on
@@ -100,11 +109,39 @@ public class SecurityConfig {
 			/*http
             	.requiresChannel().anyRequest().requiresSecure();*/
 
+			
+			/* http
+             .requestMatchers().antMatchers("/sync/**", "/oauth/users/**", "/oauth/clients/**","/me", "/oauth/token")
+         .and()
+             .authorizeRequests()
+                 .regexMatchers(HttpMethod.GET,"/oauth/token").permitAll()
+                 .regexMatchers(HttpMethod.POST,"/oauth/token").permitAll()
+                 .antMatchers("/sync").access("#oauth2.hasScope('read') or #oauth2.hasScope('write')")
+                 .antMatchers("/sync/**").access("#oauth2.hasScope('read') or #oauth2.hasScope('write')")
+                 .antMatchers("/photos/trusted/**").access("#oauth2.hasScope('trust')")
+                 .antMatchers("/photos/user/**").access("#oauth2.hasScope('trust')")
+                 .antMatchers("/photos/**").access("#oauth2.hasScope('read')")
+                 .regexMatchers(HttpMethod.DELETE, "/oauth/users/([^/].*?)/tokens/.*")
+                     .access("#oauth2.clientHasRole('ROLE_CLIENT') and (hasRole('ROLE_USER') or #oauth2.isClient()) and #oauth2.hasScope('write')")
+                 .regexMatchers(HttpMethod.GET, "/oauth/clients/([^/].*?)/users/.*")
+                     .access("#oauth2.clientHasRole('ROLE_CLIENT') and (hasRole('ROLE_USER') or #oauth2.isClient()) and #oauth2.hasScope('read')")
+                 .regexMatchers(HttpMethod.GET, "/oauth/clients/.*")
+                     .access("#oauth2.clientHasRole('ROLE_CLIENT') and #oauth2.isClient() and #oauth2.hasScope('read')");*/
+			
 			// API calls
-			http
-				.authorizeRequests()
-	        	.antMatchers("/**") // Need to narrow this or the main WebSecurityConfigurerAdapter
-	            .access("#oauth2.hasScope('trust') and (hasRole('ROLE_USER'))");
+			http.anonymous().disable()
+				.requestMatchers().antMatchers("/**")
+				.and()
+				.authorizeRequests() .regexMatchers(HttpMethod.GET,"/oauth/token").permitAll()
+                .regexMatchers(HttpMethod.POST,"/oauth/token").permitAll()//.regexMatchers("**/list/[a-z0-9]*") // Need to narrow this or the main WebSecurityConfigurerAdapter
+            	.antMatchers("/**/list/**","/**/detail/**")
+                .access("(#oauth2.hasScope('read') and (hasRole('ROLE_USER'))) or ( hasRole('ROLE_ADMIN'))")
+                .antMatchers("/**/add","/**/update","/**/delete","/alphaflow/**/create","/alphaflow/**/uploadfiles").access("(#oauth2.hasScope('write') or #oauth2.hasScope('trust') ) and (hasRole('ROLE_ADMIN'))").anyRequest().denyAll()
+               // .antMatchers("/**").access("#oauth2.hasScope('trust') and (hasRole('ROLE_ADMIN'))").anyRequest().denyAll()
+	        	//.and().authorizeRequests().antMatchers("**/add/**","**/update/**","**/delete/**","**/list/**") // Need to narrow this or the main WebSecurityConfigurerAdapter
+	            //.access("#oauth2.hasScope('trust') and (hasRole('ROLE_ADMIN'))")
+	            
+	           ;
 				
 			// @formatter:on
 		}
@@ -163,7 +200,9 @@ public class SecurityConfig {
 					.secret("secret")
 					.authorizedGrantTypes("password", "authorization_code",
 							"refresh_token", "client_credentials")
-					.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("trust");
+					.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("read","write","trust");
+			
+		
 		}
 
 		@Override

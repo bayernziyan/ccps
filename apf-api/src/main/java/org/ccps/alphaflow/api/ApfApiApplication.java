@@ -21,6 +21,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.env.Environment;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
 @Import({ ApplicationConfiguration.class })
@@ -52,6 +54,8 @@ public class ApfApiApplication extends SpringBootServletInitializer {
         //factory.setMaxRequestSize("40960");        
         return factory.createMultipartConfig();  
     }  
+	
+	
 	
 	@Bean
 	public FilterRegistrationBean filterRegistrationBean() {

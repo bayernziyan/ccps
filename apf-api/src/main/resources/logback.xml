@@ -1,7 +1,7 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 	<property name="LOG_FILE"
-		value="${catalina.base}/logs/apfapi/spring.log" />
+		value="${catalina.home}/logs/apfapi/spring.log" />
 	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
 
 	<appender name="STDOUT"
@@ -9,7 +9,7 @@
 		<!-- <file>${catalina.base}/logs/apfapi.log</file> -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
-			<FileNamePattern>${catalina.base}/logs/apfapi/apfapi.%d{yyyy-MM-dd}.log
+			<FileNamePattern>${catalina.home}/logs/apfapi/apfapi.%d{yyyy-MM-dd}.log
 			</FileNamePattern>
 			<!-- keep 30 days' worth of history -->
 			<maxHistory>30</maxHistory>
@@ -33,7 +33,7 @@
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
-			<FileNamePattern>${catalina.base}/logs/apfapi/spring.%d{yyyy-MM-dd}.log
+			<FileNamePattern>${catalina.home}/logs/apfapi/spring.%d{yyyy-MM-dd}.log
 			</FileNamePattern>
 			<!-- keep 30 days' worth of history -->
 			<maxHistory>30</maxHistory>
@@ -57,7 +57,6 @@
 		<appender-ref ref="STDOUT" />
 	</logger>
 	<root level="INFO">
-		<appender-ref ref="FILE" />
 		<appender-ref ref="CONSOLE" />  
 	</root>
 

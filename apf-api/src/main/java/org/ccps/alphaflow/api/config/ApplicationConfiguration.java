@@ -19,7 +19,7 @@ import org.thymeleaf.templateresolver.UrlTemplateResolver;
 
 
 @Configuration 
-@Import({org.ccps.common.oauth2.SecurityConfig.class, 
+@Import({//org.ccps.common.oauth2.SecurityConfig.class, 
 	org.ccps.common.db.MyBatisConfig.class,org.ccps.common.db.MultipleDataSourceAspectAdvice.class,
 	ServiceAspectAdvice.class,
 	ControllerConfiguration.class

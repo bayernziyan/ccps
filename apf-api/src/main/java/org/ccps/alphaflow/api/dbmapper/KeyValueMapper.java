@@ -3,9 +3,10 @@ package org.ccps.alphaflow.api.dbmapper;
 import java.sql.SQLException;
 
 import org.apache.ibatis.annotations.Param;
-import org.ccps.common.db.WhDbMapper;
+import org.ccps.common.db.repository.WhDbRepository;
 
-public interface KeyValueMapper extends WhDbMapper {
+@WhDbRepository
+public interface KeyValueMapper  {
 	public Integer getKeyValueIdByCodeFromSys(@Param("catId") Integer catId,@Param("code") String code) throws SQLException;
 	
 	public Integer getKeyValueIdByCodeFromWf(@Param("itemId") Integer itemId,@Param("code") String code) throws SQLException;
