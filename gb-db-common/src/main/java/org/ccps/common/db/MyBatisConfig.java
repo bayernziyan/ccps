@@ -5,16 +5,13 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -85,13 +82,15 @@ public class MyBatisConfig {
 		DataSource defDb = null;
 		
 		if( env.containsProperty("op.jdbc.load") && "Y".equalsIgnoreCase(env.getProperty("op.jdbc.load"))){
-			DataSource dbDataSource = opDbDataSource();			
+			DataSource dbDataSource = opDbDataSource();	
+			DatabaseType.opdb.setDbType(env.getProperty("op.jdbc.dialect"));
 			targetDataSources.put(DatabaseType.opdb, dbDataSource);
 			if(defDb == null)
 				defDb = dbDataSource;
 		}
 		if( env.containsProperty("wh.jdbc.load") && "Y".equalsIgnoreCase(env.getProperty("wh.jdbc.load"))){
 			DataSource dbDataSource = whDbDataSource();
+			DatabaseType.whdb.setDbType(env.getProperty("wh.jdbc.dialect"));
 			targetDataSources.put(DatabaseType.whdb, dbDataSource);
 			if(defDb == null)
 				defDb = dbDataSource;
@@ -99,6 +98,7 @@ public class MyBatisConfig {
 		}
 		if( env.containsProperty("wh1.jdbc.load") && "Y".equalsIgnoreCase(env.getProperty("wh1.jdbc.load"))){
 			DataSource dbDataSource = wh1DbDataSource();
+			DatabaseType.wh1db.setDbType(env.getProperty("wh1.jdbc.dialect"));
 			targetDataSources.put(DatabaseType.wh1db, dbDataSource);
 			if(defDb == null)
 				defDb = dbDataSource;
@@ -124,6 +124,7 @@ public class MyBatisConfig {
 		fb.setMapperLocations(
 				new PathMatchingResourcePatternResolver().getResources(env.getProperty("mybatis.mapperLocations")));//
 */
+		fb.setPlugins(new Interceptor[]{new PageInterceptor()});
 		return fb.getObject();
 	}
 

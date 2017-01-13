@@ -8,5 +8,6 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
 	protected Object determineCurrentLookupKey() {
         return DatabaseContextHolder.getDatabaseType();
     }
-
+	
+	
 }
