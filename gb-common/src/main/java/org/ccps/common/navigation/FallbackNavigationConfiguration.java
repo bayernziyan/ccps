@@ -33,7 +33,7 @@ public class FallbackNavigationConfiguration {
 		resolver.setPrefix(this.properties.getPrefix());
 		resolver.setSuffix(this.properties.getSuffix());
 		resolver.setTemplateMode(this.properties.getMode());
-		resolver.setCharacterEncoding(this.properties.getEncoding());
+//		resolver.setCharacterEncoding(this.properties.getEncoding());
 		resolver.setCacheable(this.properties.isCache());
 		return resolver;
 	}

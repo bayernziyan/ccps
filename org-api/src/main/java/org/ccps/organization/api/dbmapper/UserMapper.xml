@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.organization.api.dbmapper.UserMapper" >
+  	 
+  	  <!-- <parameterMap id="userParameter" type="Map">
+	  	 <parameter property="i_dkeycolumn" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	 <parameter property="i_ukeycolumn" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	     <parameter  property="i_user" jdbcType="OTHER"  javaType="org.ccps.organization.api.pojo.User"  mode="IN"/>
+	     <parameter property="o_result" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+     </parameterMap>  -->
+     
+     <parameterMap id="userCodeParameter" type="Map">
+        <parameter property="i_dkeycolumn" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+         <parameter property="i_ukeycolumn" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <parameter property="i_usercode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+    </parameterMap>
+     
+   <!--   private String userCode;
+	private String userName;
+	private String defPwd;
+	/**
+	 * w m
+	 */
+	private String sex;
+	private String ssn;
+	private String deptCode;
+	private String birthDate;
+	private String enterUnitDate;
+	private String mobilePhone;
+	private String mailAddr;
+	private int statusCode;
+	private int deptType;
+	private Date createDate; 
+	
+	 p_psn_code in varchar2,
+   p_psn_name in varchar2,
+   p_def_pwd  in varchar2,
+   p_sex in varchar2,
+   p_ssn in varchar2,
+   p_dept_code IN varchar2,
+   p_birthdate in varchar2,
+   p_enterunitdate in varchar2,
+   p_mobile in varchar2,
+   p_mail in varchar2,
+
+   p_statuscode in number,
+   p_depttype   in number,
+	-->
+     
+     <sql id="user_common_dml" >
+		<![CDATA[  
+	       {call newsoft.SP_ECCM_HR_DEPT(#{i_dkeycolumn,mode=IN,jdbcType=VARCHAR},#{i_ukeycolumn,mode=IN,jdbcType=VARCHAR},#{i_user.userCode,mode=IN,jdbcType=VARCHAR}
+	       ,#{i_user.userName,mode=IN,jdbcType=VARCHAR},#{i_user.defPwd,mode=IN,jdbcType=VARCHAR},#{i_user.sex,mode=IN,jdbcType=VARCHAR}
+	       ,#{i_user.ssn,mode=IN,jdbcType=VARCHAR},#{i_user.deptCode,mode=IN,jdbcType=VARCHAR},#{i_user.birthDate,mode=IN,jdbcType=VARCHAR}
+	       ,#{i_user.enterUnitDate,mode=IN,jdbcType=VARCHAR},#{i_user.mobilePhone,mode=IN,jdbcType=VARCHAR},#{i_user.mailAddr,mode=IN,jdbcType=VARCHAR}
+	       ,#{i_user.statusCode,mode=IN,jdbcType=VARCHAR},#{i_user.deptType,mode=IN,jdbcType=VARCHAR}
+			,#{o_result,mode=OUT,jdbcType=VARCHAR})}
+	    ]]>  
+	</sql>  
+	
+	<select id="addUser" statementType="CALLABLE"  parameterType="java.util.Map">
+		 <include refid="user_common_dml" />
+	</select>
+	
+	<select id="updateUser" statementType="CALLABLE" parameterType="java.util.Map">
+		 <include refid="user_common_dml" />
+	</select>
+	
+	<select id="deleteUser" statementType="CALLABLE" parameterType="java.util.Map">
+		 <include refid="user_common_dml" />
+	</select>
+	<!-- private String sex;
+	private String ssn;
+	private String deptCode;
+	private String birthDate;
+	private String enterUnitDate;
+	private String mobilePhone;
+	private String mailAddr;
+	private int statusCode;
+	private int deptType; -->
+	<select id="selectUserDetailByCode" resultType="org.ccps.organization.api.pojo.User" parameterMap="userCodeParameter">
+		<![CDATA[ 
+			select a.${i_ukeycolumn} userCode,b.${i_dkeycolumn} parentDeptCode ,a.mi userName,a.sex sex,a.birth_date birthDate,a.hire_date enterUnitDate,a.ssn,
+			a.mobile_phone mobilePhone,a.EMAIL_ADDR mailAddr,a.create_date createDate,
+			a.status_code statusCode from newsoft.user_table a left join newsoft.departments b on a.dept_id=b.dept_id where a.${i_ukeycolumn}=#{i_usercode}
+		]]>  
+	</select>
+	
+	<select id="selectValidUserDetailListByRoot" resultType="org.ccps.organization.api.pojo.User" >
+		<![CDATA[ 
+			select a.${i_ukeycolumn} userCode,b.${i_dkeycolumn} parentDeptCode ,a.mi userName,a.sex sex,a.birth_date birthDate,a.hire_date enterUnitDate,a.ssn,
+			a.mobile_phone mobilePhone,a.EMAIL_ADDR mailAddr,a.create_date createDate,
+			a.status_code statusCode from newsoft.user_table a left join newsoft.departments b on a.dept_id=b.dept_id where b.${i_dkeycolumn}=#{i_rootcode} and a.status_code=1
+		]]>  
+	</select>
+	
+	<select id="selectUserDetailListBySearchWapper"   parameterType="java.util.Map" resultType="org.ccps.organization.api.pojo.User"  >  
+	   select * from (
+			select a.${i_ukeycolumn} userCode,b.${i_dkeycolumn} parentDeptCode ,a.mi userName,a.sex sex,a.birth_date birthDate,a.hire_date enterUnitDate,a.ssn,
+			a.mobile_phone mobilePhone,a.EMAIL_ADDR mailAddr,a.create_date createDate,
+			a.status_code statusCode from newsoft.user_table a left join newsoft.departments b on a.dept_id=b.dept_id   
+		)
+	    <where >
+	      <foreach collection="i_searchexample.oredCriteria" item="criteria" separator="or" >
+	        <if test="criteria.valid" > 
+	           and 
+	          <trim prefix="(" suffix=")" prefixOverrides="and" >
+	            <foreach collection="criteria.criteria" item="criterion" >
+	              <choose >
+	                <when test="criterion.noValue" >
+	                  and ${criterion.condition}
+	                </when>
+	                <when test="criterion.singleValue" >
+	                  and ${criterion.condition} #{criterion.value}
+	                </when>
+	                <when test="criterion.betweenValue" >
+	                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+	                </when>
+	                <when test="criterion.listValue" >
+	                  and ${criterion.condition}
+	                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+	                    #{listItem}
+	                  </foreach>
+	                </when>
+	              </choose>
+	            </foreach>
+	          </trim>
+	        </if>
+	      </foreach>
+    	</where>
+    	
+	   <if test="orderByClause != null" >
+     		 order by ${orderByClause}
+   	   </if> 
+   	
+    </select> 
+</mapper>

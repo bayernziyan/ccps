@@ -12,6 +12,7 @@ import org.springframework.beans.factory.support.BeanNameGenerator;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.MultipartConfigFactory;
@@ -29,7 +30,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 @EnableAutoConfiguration
 //@MapperScan("org.ccps.alphaflow.api.dbmapper")
 public class ApfApiApplication extends SpringBootServletInitializer {
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		 SpringApplication application = new SpringApplication(ApfApiApplication.class); 
 		 application.run(ApfApiApplication.class, args);
 	}

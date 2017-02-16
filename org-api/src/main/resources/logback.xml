@@ -1,7 +1,7 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 	<property name="LOG_FILE"
-		value="${catalina.home}/logs/apfapi/spring.log" />
+		value="${catalina.home}/logs/orgapi/spring.log" />
 	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
 
 	<appender name="STDOUT"
@@ -9,7 +9,7 @@
 		<!-- <file>${catalina.base}/logs/apfapi.log</file> -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
-			<FileNamePattern>${catalina.home}/logs/apfapi/apfapi.%d{yyyy-MM-dd}.log
+			<FileNamePattern>${catalina.home}/logs/orgapi/orgapi.%d{yyyy-MM-dd}.log
 			</FileNamePattern>
 			<!-- keep 30 days' worth of history -->
 			<maxHistory>30</maxHistory>
@@ -40,9 +40,9 @@
 	</appender>
 
 
-	<logger name="org.springframework.web" level="INFO" />
+	<logger name="org.springframework.web" level="TRACE" />
 	<!--logback.LogbackDemo：类的全路径 -->
-	<logger name="org.ccps" level="INFO" additivity="false">
+	<logger name="org.ccps" level="INFO" additivity="true">
 		<appender-ref ref="STDOUT" />
 	</logger>
 	<root level="INFO">

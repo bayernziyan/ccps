@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.organization.api.dbmapper.DeptMapper" >
+	
+	
+	
+	<!-- <parameterMap id="deptParameter" type="Map">
+        <parameter property="i_keycolumn" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <parameter property="i_dept"   jdbcType="OTHER"  javaType="org.ccps.organization.api.pojo.Department" mode="IN"/>
+        <parameter property="o_result" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+    </parameterMap> -->
+    
+    <parameterMap id="deptCodeParameter" type="Map">
+        <parameter property="i_keycolumn" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+        <parameter property="i_deptcode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+    </parameterMap>
+    
+	<!-- private String deptCode;
+	private String parentDeptCode;
+	private String deptName;
+	private String deptShortName;
+	private int orgSubLevel;
+	private int statusCode;
+	
+	private int deptType; -->
+	<sql id="dept_common_dml" >
+		<![CDATA[  
+	       {call newsoft.SP_ECCM_HR_DEPT(#{i_keycolumn,mode=IN,jdbcType=VARCHAR},#{i_dept.deptCode,mode=IN,jdbcType=VARCHAR},#{i_dept.parentDeptCode,mode=IN,jdbcType=VARCHAR}
+	       ,#{i_dept.deptName,mode=IN,jdbcType=VARCHAR},#{i_dept.deptShortName,mode=IN,jdbcType=VARCHAR},#{i_dept.deptType,mode=IN,jdbcType=INTEGER},#{i_dept.orgSubLevel,mode=IN,jdbcType=INTEGER}
+	       ,#{i_dept.statusCode,mode=IN,jdbcType=INTEGER},#{o_result,mode=OUT,jdbcType=VARCHAR})}
+	    ]]>  
+	</sql>  
+	
+	<select id="addDept" statementType="CALLABLE"  parameterType="java.util.Map">
+		 <include refid="dept_common_dml" />
+	</select>
+	
+	<select id="updateDept" statementType="CALLABLE" parameterType="java.util.Map" >
+		 <include refid="dept_common_dml" />
+	</select>
+	
+	<select id="deleteDept" statementType="CALLABLE" parameterType="java.util.Map">
+		 <include refid="dept_common_dml" />
+	</select>
+	
+	<select id="selectDeptDetailByCode" resultType="org.ccps.organization.api.pojo.Department" parameterMap="deptCodeParameter">
+		<![CDATA[ 
+			select a.${i_keycolumn} deptCode,b.${i_keycolumn} parentDeptCode ,a.name deptName,a.short_name deptShortName,a.org_sub_level orgSubLevel,
+			a.status_code statusCode from newsoft.departments a left join newsoft.departments b on a.parent_id=b.dept_id where a.${i_keycolumn}=#{i_deptcode}
+		]]>  
+	</select>
+  	
+  	<select id="selectValidDeptDetailListByRoot" resultType="java.util.List" >
+		<![CDATA[ 
+			select a.${i_keycolumn} deptCode,b.${i_keycolumn} parentDeptCode ,a.name deptName,a.short_name deptShortName,a.org_sub_level orgSubLevel,
+			a.status_code statusCode from newsoft.departments a left join newsoft.departments b on a.parent_id=b.dept_id where b.${i_keycolumn}=#{i_rootcode} and a.status_code=1
+		]]>  
+	</select>
+  	
+</mapper>
