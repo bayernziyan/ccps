@@ -1,4 +1,4 @@
-package org.ccps.auth.server.config;
+package org.ccps.security.auth2.config;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ccps.security.auth2.oauth.MyUserApprovalHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -21,8 +22,6 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -31,6 +30,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
@@ -46,6 +46,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
@@ -55,9 +56,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.filter.CompositeFilter;
 
-import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
 public class SecurityConfig {
@@ -118,14 +119,26 @@ public class SecurityConfig {
 
 			//http.anonymous().and().httpBasic();
 			http.userDetailsService(userDetailsService())
-			.authorizeRequests()
-            .antMatchers("/mappings/**","/env/**","/health/**","/metrics/**","/trace/**","/dump/**","/beans/**","/info/**","/autoconfig/**","/configprops/**","/logfile/**","/jolokia/**").permitAll()
-            .and().formLogin().loginPage("/login")
-            
-            /* .antMatchers("/oauth/token").permitAll()
-            .antMatchers("/user/list/**","/dept/list/**")
-            .access("hasRole('ROLE_USER')").anyRequest().denyAll()*/
-            .and().csrf().disable().httpBasic()
+			 .authorizeRequests()
+             .antMatchers("/login.jsp").permitAll()
+             //.antMatchers("/oauth/token").permitAll()
+            // .anyRequest().hasRole("USER")//all others request authentication
+             .and()
+         .exceptionHandling()
+             .accessDeniedPage("/login.jsp?authorization_error=true")
+           .and() 
+         // TODO: put CSRF protection back into this endpoint
+         .csrf()
+             .requireCsrfProtectionMatcher(new AntPathRequestMatcher("/oauth/authorize"))
+             .disable()
+         .logout()
+         	.logoutUrl("/logout")
+             .logoutSuccessUrl("/login.jsp")
+             .and()
+         .formLogin()
+         	.loginProcessingUrl("/login")
+             .failureUrl("/login.jsp?authentication_error=true")
+             .loginPage("/login.jsp")
 			//.and()
 				;
 			// @formatter:on
@@ -194,43 +207,24 @@ public class SecurityConfig {
 		@Autowired
 		private UserDetailsService userDetailsService; 
 		
-		
+
+		@Override
+		public void configure(ResourceServerSecurityConfigurer resources) {
+			resources.resourceId("oauth2").stateless(false);
+		}
+
 		
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
 
-			// @formatter:off
-			/*http
-            	.requiresChannel().anyRequest().requiresSecure();*/
-
-			
-			/* http
-             .requestMatchers().antMatchers("/sync/**", "/oauth/users/**", "/oauth/clients/**","/me", "/oauth/token")
-         .and()
-             .authorizeRequests()
-                 .regexMatchers(HttpMethod.GET,"/oauth/token").permitAll()
-                 .regexMatchers(HttpMethod.POST,"/oauth/token").permitAll()
-                 .antMatchers("/sync").access("#oauth2.hasScope('read') or #oauth2.hasScope('write')")
-                 .antMatchers("/sync/**").access("#oauth2.hasScope('read') or #oauth2.hasScope('write')")
-                 .antMatchers("/photos/trusted/**").access("#oauth2.hasScope('trust')")
-                 .antMatchers("/photos/user/**").access("#oauth2.hasScope('trust')")
-                 .antMatchers("/photos/**").access("#oauth2.hasScope('read')")
-                 .regexMatchers(HttpMethod.DELETE, "/oauth/users/([^/].*?)/tokens/.*")
-                     .access("#oauth2.clientHasRole('ROLE_CLIENT') and (hasRole('ROLE_USER') or #oauth2.isClient()) and #oauth2.hasScope('write')")
-                 .regexMatchers(HttpMethod.GET, "/oauth/clients/([^/].*?)/users/.*")
-                     .access("#oauth2.clientHasRole('ROLE_CLIENT') and (hasRole('ROLE_USER') or #oauth2.isClient()) and #oauth2.hasScope('read')")
-                 .regexMatchers(HttpMethod.GET, "/oauth/clients/.*")
-                     .access("#oauth2.clientHasRole('ROLE_CLIENT') and #oauth2.isClient() and #oauth2.hasScope('read')");*/
-			
 			// API calls
-			http.anonymous().disable()
-			.requestMatchers().antMatchers("/**")
-			.and()
-			.authorizeRequests() .regexMatchers(HttpMethod.GET,"/oauth/token").permitAll()
+			http
+			// Since we want the protected resources to be accessible in the UI as well we need 
+			// session creation to be allowed (it's disabled by default in 2.0.6)
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+		.and()
+		  	.authorizeRequests() .regexMatchers(HttpMethod.GET,"/oauth/token").permitAll()
             .regexMatchers(HttpMethod.POST,"/oauth/token").permitAll()//.regexMatchers("**/list/[a-z0-9]*") // Need to narrow this or the main WebSecurityConfigurerAdapter
-        	.antMatchers("/**")
-            .access("(#oauth2.hasScope('read') and (hasRole('ROLE_USER'))) or ( hasRole('ROLE_ADMIN'))").anyRequest().denyAll()
-	            
 	           ;
 				
 			// @formatter:on
@@ -292,9 +286,9 @@ public class SecurityConfig {
 		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 			clients.inMemory()
 					.withClient("api-client")
-					.secret("secret")
+					.secret("secret").resourceIds("oauth2")
 					.authorizedGrantTypes("password", "authorization_code",
-							"refresh_token", "client_credentials")
+							"refresh_token", "client_credentials").autoApprove(true)
 					.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("read","write","trust").accessTokenValiditySeconds(1800);
 			
 		

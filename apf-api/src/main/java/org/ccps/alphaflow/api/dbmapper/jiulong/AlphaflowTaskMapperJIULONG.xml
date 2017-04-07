@@ -32,7 +32,7 @@
         <parameter property="o_is_flow_down" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
         <parameter property="o_mq_send" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
         <parameter property="o_mq_nexttaskname" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
-      <!--   <parameter property="o_deal_to_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/> -->
+        <parameter property="o_deal_to_task_id" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
         <parameter property="o_next_task_list" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/> 
     </parameterMap>
 
@@ -41,7 +41,7 @@
 	<!-- 20参数 -->     <!-- ,?,?,?,?,? -->
 	<select id="alphaflowTaskForward" parameterMap="wttaWorkflowParameter" statementType="CALLABLE">
 		<![CDATA[
-			{ call newsoft.sp_eccm_wtta(?,?,?,?,?,?,6,1,3,2,11,'','Y',?,?,?,?,?,?,?,?,?,?,?) } 
+			{ call newsoft.sp_eccm_wtta(?,?,?,?,?,?,6,1,3,2,11,'','Y',?,0,?,?,?,?,?,?,?,?,?,?,?) } 
 		]]>	
 	</select>
   	

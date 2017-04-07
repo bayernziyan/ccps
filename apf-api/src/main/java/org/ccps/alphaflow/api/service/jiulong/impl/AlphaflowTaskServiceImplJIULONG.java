@@ -9,6 +9,7 @@ import org.ccps.alphaflow.api.common.RestException;
 import org.ccps.alphaflow.api.common.ServiceExcuteResult;
 import org.ccps.alphaflow.api.dbmapper.*;
 import org.ccps.alphaflow.api.dbmapper.ata.AlphaflowTaskMapperATA;
+import org.ccps.alphaflow.api.dbmapper.jiulong.AlphaflowTaskMapperJIULONG;
 import org.ccps.alphaflow.api.pojo.AlphaflowFormItem;
 import org.ccps.alphaflow.api.pojo.AlphaflowInstanceBean;
 import org.ccps.alphaflow.api.pojo.UserBean;
@@ -30,7 +31,7 @@ public class AlphaflowTaskServiceImplJIULONG implements AlphaflowTaskServiceJIUL
 	@Autowired
 	private AlphaflowTaskMapper alphaflowTaskMapper;
 	@Autowired
-	private AlphaflowTaskMapperATA alphaflowTaskMapperJIULONG;
+	private AlphaflowTaskMapperJIULONG alphaflowTaskMapperJIULONG;
 	@Autowired
 	private OAUserMapper oaUserMapper;
 

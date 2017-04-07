@@ -212,5 +212,6 @@
 		<!-- <module>gb-auth</module> -->
 		<module>org-api</module>
 		<module>gb-web-auth</module>
+		<module>gb-web-auth2</module>
 	</modules>
 </project>

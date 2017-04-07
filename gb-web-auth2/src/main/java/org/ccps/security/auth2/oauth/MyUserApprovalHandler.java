@@ -1,4 +1,4 @@
-package org.ccps.common.oauth2;
+package org.ccps.security.auth2.oauth;
 
 import java.util.Collection;
 
@@ -44,7 +44,6 @@ public class MyUserApprovalHandler extends ApprovalStoreUserApprovalHandler {
     @Override
     public AuthorizationRequest checkForPreApproval(AuthorizationRequest authorizationRequest,
             Authentication userAuthentication) {
-
         boolean approved = false;
         // If we are allowed to check existing approvals this will short circuit the decision
         if (useApprovalStore) {

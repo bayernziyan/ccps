@@ -1,0 +1,57 @@
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<property name="LOG_FILE"
+		value="${catalina.home}/logs/oauth2/spring.log" />
+	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- <file>${catalina.base}/logs/oauth2.log</file> -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<FileNamePattern>${catalina.home}/logs/oauth2/oauth2.%d{yyyy-MM-dd}.log
+			</FileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<Pattern>%-15d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{0}[%file:%line] - %msg%n %ex{2}</Pattern>
+			<charset>UTF-8</charset>
+			<immediateFlush>true</immediateFlush>
+		</encoder>
+	</appender>
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 过滤掉 TRACE 和 DEBUG 级别的日志 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<encoder>
+			<pattern>
+				%-15d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{0}[%file:%line] - %msg%n %ex{2}
+			</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="org.springframework.web" level="INFO" />
+	<!--logback.LogbackDemo：类的全路径 -->
+	<logger name="org.ccps" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="org.springframework.security" level="DEBUG" >
+		<appender-ref ref="CONSOLE" />  
+	</logger>
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />  
+	</root>
+
+
+	<jmxConfigurator />
+</configuration>

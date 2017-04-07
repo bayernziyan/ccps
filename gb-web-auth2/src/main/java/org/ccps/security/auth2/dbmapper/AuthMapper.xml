@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.security.auth2.dbmapper.AuthMapper" >
+	
+
+    <select id="getUserByName" resultType="org.ccps.security.auth2.pojo.User"  >  
+	    <![CDATA[  
+	       select user_id name,password from newsoft.user_table where user_id=#{username}
+	    ]]>  
+    </select> 
+    
+      	
+      	
+      	
+</mapper>
