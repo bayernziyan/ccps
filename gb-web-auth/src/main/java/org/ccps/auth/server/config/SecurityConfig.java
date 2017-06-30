@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ccps.auth.server.service.impl.MyAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -83,7 +84,8 @@ public class SecurityConfig {
 		private UserDetailsService userDetailsService; 
 		@Autowired
 		private UserInfoRestTemplateFactory userInfoRestTemplateFactory;
-
+		@Autowired
+		private MyAuthenticationProvider myAuthenticationProvider;
 		
 		@Bean
 		@ConditionalOnMissingBean
@@ -95,9 +97,11 @@ public class SecurityConfig {
 		protected void globalAuthentication(AuthenticationManagerBuilder auth)
 				throws Exception {
 			//auth.inMemoryAuthentication()
-			auth.userDetailsService(userDetailsService());
+			 auth.userDetailsService(userDetailsService).passwordEncoder(new MyPasswordEncoder());
+			 myAuthenticationProvider.setSaltSource(new MySaltSource());
+			 myAuthenticationProvider.setPasswordEncoder(new MyPasswordEncoder());
+			 auth.authenticationProvider(myAuthenticationProvider);
 		}
-
 		@Bean(name = "authenticationManager")
 		@Override
 		public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -148,6 +152,7 @@ public class SecurityConfig {
 		
 		@Override
 		protected UserDetailsService userDetailsService() {
+			
 		    return userDetailsService;
 		}
 
@@ -232,7 +237,6 @@ public class SecurityConfig {
             .access("(#oauth2.hasScope('read') and (hasRole('ROLE_USER'))) or ( hasRole('ROLE_ADMIN'))").anyRequest().denyAll()
 	            
 	           ;
-				
 			// @formatter:on
 		}
 		public UserDetailsService getUserService() {
@@ -250,7 +254,8 @@ public class SecurityConfig {
 		
 		@Autowired
 		private ClientDetailsService clientDetailsService;
-
+		//ProviderManager
+		//org.springframework.security.authentication.dao.DaoAuthenticationProvider
 		@Autowired
 		private AuthenticationManager authenticationManager;
 
@@ -280,7 +285,7 @@ public class SecurityConfig {
 		@Override
 		public void configure(AuthorizationServerEndpointsConfigurer endpoints)
 				throws Exception {
-			endpoints.tokenStore(tokenStore())
+			endpoints.tokenStore(tokenStore()).tokenGranter(new MyResourceOwnerPasswordTokenGranter(authenticationManager, endpoints.getTokenServices(), endpoints.getClientDetailsService(), endpoints.getOAuth2RequestFactory()))
 					.userApprovalHandler(userApprovalHandler())
 					.authenticationManager(authenticationManager);
 			
@@ -291,11 +296,11 @@ public class SecurityConfig {
 		@Override
 		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 			clients.inMemory()
-					.withClient("api-client")
-					.secret("secret")
-					.authorizedGrantTypes("password", "authorization_code",
-							"refresh_token", "client_credentials")
-					.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("read","write","trust").accessTokenValiditySeconds(1800);
+					.withClient(MySaltSource.clientId)
+					.secret(MySaltSource.clientSecret)
+					.authorizedGrantTypes("password"/*, "authorization_code",
+							"refresh_token", "client_credentials"*/)
+					.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("read","write","trust").accessTokenValiditySeconds(20);
 			
 		
 		}

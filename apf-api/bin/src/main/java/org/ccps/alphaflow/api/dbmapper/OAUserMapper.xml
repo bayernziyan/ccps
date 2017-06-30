@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.OAUserMapper" >
+	
+
+    <select id="getUserBeanByUserId" resultType="org.ccps.alphaflow.api.pojo.UserBean" >  
+	    <![CDATA[  
+	       select user_id userId,mi userName,user_skey userSkey, myws_id myWsId, newsoft.join_peter1(cursor(select e.request_desc from newsoft.ecl_request_sheet e where e.folder_id=0 and e.org_level<3 start with request_id=myws_id connect by prior e.parent_id = e.request_id 
+order by rownum desc),'--') fullDeptName from newsoft.user_table where user_id=#{userId,jdbcType=VARCHAR}
+	    ]]>  
+    </select>  
+    
+    
+    
+    <select id="getUserBeanByReqId" resultType="org.ccps.alphaflow.api.pojo.UserBean" >  
+	    <![CDATA[  
+	       select user_id userId,mi userName,user_skey userSkey, myws_id myWsId, newsoft.join_peter1(cursor(select e.request_desc from newsoft.ecl_request_sheet e where e.folder_id=0 and e.org_level<3 start with request_id=myws_id connect by prior e.parent_id = e.request_id 
+order by rownum desc),'--') fullDeptName from newsoft.user_table where myws_id=#{userReqId,jdbcType=INTEGER}
+	    ]]>  
+    </select>  
+
+  	
+  	<select id="getMyOtherWorkspaceUsersBeanByUserId" resultType="org.ccps.alphaflow.api.pojo.UserBean" >  
+  		<![CDATA[ 
+  			select s.request_id, u.user_skey,u.user_id FROM  newsoft.user_table u,newsoft.ecl_request_sheet s 
+  			 where s.folder_id=0 and s.org_id = u.user_skey  and  s.org_level = 3
+  			  and REGEXP_LIKE(u.user_id, #{userId}||'[1-9]')
+  		]]>  	
+  	</select>
+  	
+</mapper>

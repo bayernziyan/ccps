@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ccps.alphaflow.api.dbmapper.KeyValueMapper" >
+	
+
+    <select id="getKeyValueIdByCodeFromSys" resultType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select key_id from newsoft.keyvalue_lookup where category_id =#{catId} and COALESCE(comments,value)=#{code}
+	    ]]>  
+    </select>     
+	
+  	<select id="getKeyValueIdByCodeFromWf" resultType="java.lang.Integer" >  
+	    <![CDATA[  
+	       select id from newsoft.ecl_request_form_options where item_id =#{itemId} and REGEXP_REPLACE(option_value, chr(13)||chr(10)||'|'||chr(13)||'|'||chr(10)||'$', '')=#{code}
+	    ]]>  
+    </select> 
+  	
+  	<select id="getKeyValueDescByIdFromWf" resultType="java.lang.String">
+  		<![CDATA[  
+	       select REGEXP_REPLACE(option_value, chr(13)||chr(10)||'|'||chr(13)||'|'||chr(10)||'$', '')  from newsoft.ecl_request_form_options where id =#{id} 
+	    ]]>  
+  	</select>
+  	
+  		<select id="getKeyValueDescByIdFromSys" resultType="java.lang.String">
+  		<![CDATA[  
+	        select value  from newsoft.keyvalue_lookup where key_id =#{id}
+	    ]]>  
+  	</select>
+  	
+</mapper>

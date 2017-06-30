@@ -51,7 +51,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         UserDetails userDetails = null;
 		try {
 			userDetails = new org.springframework.security.core.userdetails.User(  
-			        username, Eryptogram.decryptOp(user.getPassword(),APPKEY), enabled, accountNonExpired,  
+			        username, "N/A", enabled, accountNonExpired,  
 			        credentialsNonExpired, accountNonLocked, grantedAuths);
 		} catch (Exception e) {
 			e.printStackTrace();
